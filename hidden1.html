@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+<h1>Hidden things by Madhu Babu Konda</h1>
+<h2>Getting input</h2>
+
+<form>
+    <label for="form1_secret">Enter the secret word</label>
+    <input type ="password" id="form1_secret" name="form1_secret" min=10 max=50 step=2 value="secret"> <br>
+
+    <label for="form1_guess">Enter a guess</label>
+    <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
+
+    <input type="button" onclick="processGuess()" value="Check the guess">
+</form>
+
+
+<p id="result"> </p>
+<div class="container" >
+    <img id="image" width="200" height="200" onclick=rotateImage() src="kiwi.jpg">
+</div>
+<script> 
+var correct = 0;
+var wrong = 0;
+var currentImage=0;
+
+function processGuess(){
+    console.log("checking the guess")
+    secret = document.getElementById("form1_secret")
+    guess = document.getElementById("form1_guess")
+    out = document.getElementById("result")
+    if(secret.value == guess.value){
+        correct = correct + 1
+        alert("Congratulations");
+    } else {
+        wrong = wrong + 1
+       alert("Sorry");
+    }
+    out.innerHTML = wrong + "wrong count" + correct + "correct count";
+}
+function rotateImage(){
+    var image = document.getElementById("image");
+    switch(currentImage)
+    {
+        case 0:image.src="kiwi.jpg";
+        currentImage=1;
+        break;
+        case 1:image.src="mango.jpg";
+        currentImage=2;
+        break;
+        case 2:image.src="orange.jpg";
+        currentImage=0;
+        break;
+    }
+}
+</script>
+
+</body>
+</html> 
