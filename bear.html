@@ -4,34 +4,49 @@
         <title>
             Checkboxes 
         </title>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+  <style>
+    h2 {
+text-shadow: 0 0 3px #5900ff;
+}
+form {
+    align-items: center;
+}          
+</style>
     </head>
 <body>
 
 <h2>Madhu Babu Konda builds a bear</h2>
 <form>
-    <label for="form1_hat">Hat </label>
+    <label for="form1_hat"class = "col-sm-2 col-form-label">Hat </label>
     <input type ="checkbox" id="form1_hat" name="form1_hat" value=hat> <br>
 
-    <label for="form1_scarf">scarf</label>
+    <label for="form1_scarf"class = "col-sm-2 col-form-label">scarf</label>
     <input type ="checkbox" id="form1_scarf" name="form1_scarf" value=scarf> <br>
 
-    <label for="form1_shirt">shirt </label>
+    <label for="form1_shirt"class = "col-sm-2 col-form-label">shirt </label>
     <input type ="checkbox" id="form1_shirt" name="form1_shirt" autofocus> <br>
 
-    <input type="button" onclick="startbear()" value="Start a bear">
+    <input type="button" class="btn btn-primary" onclick="startbear()" value="Start a bear">
 </form>
 
 
 <p id="result">This text will be replaced </p>
 
 <form>
-    <label for="form1_prop">Enter a property </label>
+    <label for="form1_prop"class = "col-sm-2 col-form-label">Enter a property </label>
     <input type ="text" id="form1_prop" name="form1_prop" min=10 max=50 step=2 value=color> <br>
 
-    <label for="form1_value">Enter a value </label>
+    <label for="form1_value"class = "col-sm-2 col-form-label">Enter a value </label>
     <input type ="text" id="form1_value" name="form1_value"> <br>
 
-    <input type="button" onclick="updatebear()" value="Update the bear">
+    <input type="button"class="btn btn-primary" onclick="updatebear()" value="Update the bear">
 </form>
 
 <p id="result2">Result 2</p>
@@ -62,7 +77,7 @@ function startbear()
     out.innerHTML = my_bear
     my_bear= JSON.parse(my_bear)
     }
-    
+
     function updatebear()
     {
         var num1=document.getElementById("form1_prop").value
