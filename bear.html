@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Checkboxes 
+        </title>
+    </head>
+<body>
+
+<h2>Madhu Babu Konda builds a bear</h2>
+<form>
+    <label for="form1_hat">Hat </label>
+    <input type ="checkbox" id="form1_hat" name="form1_hat" value=hat> <br>
+
+    <label for="form1_scarf">scarf</label>
+    <input type ="checkbox" id="form1_scarf" name="form1_scarf" value=scarf> <br>
+
+    <label for="form1_shirt">shirt </label>
+    <input type ="checkbox" id="form1_shirt" name="form1_shirt" autofocus> <br>
+
+    <input type="button" onclick="startbear()" value="Start a bear">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<form>
+    <label for="form1_prop">Enter a property </label>
+    <input type ="text" id="form1_prop" name="form1_prop" min=10 max=50 step=2 value=color> <br>
+
+    <label for="form1_value">Enter a value </label>
+    <input type ="text" id="form1_value" name="form1_value"> <br>
+
+    <input type="button" onclick="updatebear()" value="Update the bear">
+</form>
+
+<p id="result2">Result 2</p>
+
+<script> 
+
+var my_bear = {}
+
+function startbear()
+    {
+        if(document.getElementById("form1_hat").checked){
+        my_bear["hat"]=true;
+    }else{
+        my_bear["hat"]=false;
+    }
+     if(document.getElementById("form1_scarf").checked){
+        my_bear["scarf"]=true;
+    }else{
+        my_bear["scarf"]=false;
+    }
+    if(document.getElementById("form1_shirt").checked){
+        my_bear["shirt"]=true;
+    }else{
+        my_bear["shirt"]=false;
+    }
+    out = document.getElementById("result")
+    my_bear= JSON.stringify(my_bear)
+    out.innerHTML = my_bear
+    my_bear= JSON.parse(my_bear)
+    }
+    
+    function updatebear()
+    {
+        var num1=document.getElementById("form1_prop").value
+        var num2 = document.getElementById("form1_value").value
+        my_bear[num1] = num2;
+        out=document.getElementById("result2")
+        my_bear= JSON.stringify(my_bear)
+    out.innerHTML = my_bear
+    my_bear= JSON.parse(my_bear)
+    }
+</script>
+</body>
+</html> 
